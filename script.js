@@ -356,3 +356,33 @@ function showFact(idx, { showText = true } = {}) {
     }
 }
 
+const audio = document.getElementById('bg-music');
+  const toggle = document.getElementById('music-toggle');
+ 
+  // Try to start immediately; if blocked, start on first interaction
+  audio.play().catch(() => {
+    const unlock = () => {
+      audio.play().catch(() => {/* ignore */});
+      document.removeEventListener('click', unlock);
+      document.removeEventListener('touchstart', unlock);
+    };
+    document.addEventListener('click', unlock, { once: true });
+    document.addEventListener('touchstart', unlock, { once: true });
+  });
+ 
+  // Toggle play/pause
+  const updateUI = () => {
+    const playing = !audio.paused;
+    toggle.textContent = playing ? '⏸️ Pause' : '▶️ Play';
+    toggle.setAttribute('aria-label', playing ? 'Pause music' : 'Play music');
+    toggle.setAttribute('aria-pressed', playing ? 'true' : 'false');
+  };
+ 
+  toggle.addEventListener('click', () => {
+    if (audio.paused) audio.play(); else audio.pause();
+    updateUI();
+  });
+ 
+  // Keep UI in sync if user interacts via system controls
+  audio.addEventListener('play', updateUI);
+  audio.addEventListener('pause', updateUI);

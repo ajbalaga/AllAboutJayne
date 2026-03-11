@@ -26,7 +26,7 @@
   <!-- Script -->
   <script src="script.js" defer></script>
 </head>
-<body>
+<body>  
   <div id="top">
     <a href="#main" class="u-skip">Skip to main</a>
     <header class="z-header">
@@ -63,6 +63,20 @@
           </figure>
           <div class="chunk reveal">
             <h2 class="slice-title">About Me</h2>
+            <p class="music-line">
+              Have some music first🎶
+              <audio id="bg-music" autoplay loop playsinline>
+                <source src="music/silly cat.ogg" type="audio/ogg">
+                <source src="music/silly cat.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            
+              <button id="music-toggle" class="music-btn" aria-label="Pause music" aria-pressed="true">
+                ▶️ Music on
+              </button>
+            </p>
+            
+
             <p class="about-copy">
               I’m <strong><span class="name-highlight">“Jane”</span></strong> — obsessed with <strong>pink</strong> and my pup
               <strong>Cookie</strong> 🐶. I graduated from <strong>Mapúa Institute of Technology</strong> in Computer Engineering Major in
