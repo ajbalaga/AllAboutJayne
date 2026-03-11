@@ -356,33 +356,48 @@ function showFact(idx, { showText = true } = {}) {
     }
 }
 
+//music
 const audio = document.getElementById('bg-music');
-  const toggle = document.getElementById('music-toggle');
- 
-  // Try to start immediately; if blocked, start on first interaction
-  audio.play().catch(() => {
+const toggle = document.getElementById('music-toggle');
+
+// Update UI based on audio state
+const updateUI = () => {
+  const playing = !audio.paused;
+  toggle.textContent = playing ? '⏸️ Pause' : '▶️ Play';
+  toggle.setAttribute('aria-label', playing ? 'Pause music' : 'Play music');
+  toggle.setAttribute('aria-pressed', playing ? 'true' : 'false');
+};
+
+// Attempt initial play
+const attemptPlay = () => {
+  audio.play().then(updateUI).catch(() => {
+    // If blocked (which is standard on mobile), wait for ANY tap on the screen
     const unlock = () => {
-      audio.play().catch(() => {/* ignore */});
+      audio.play().then(updateUI).catch(() => {/* ignore */});
       document.removeEventListener('click', unlock);
-      document.removeEventListener('touchstart', unlock);
     };
+    
+    // 'click' safely covers both desktop clicks and mobile taps
     document.addEventListener('click', unlock, { once: true });
-    document.addEventListener('touchstart', unlock, { once: true });
   });
- 
-  // Toggle play/pause
-  const updateUI = () => {
-    const playing = !audio.paused;
-    toggle.textContent = playing ? '⏸️ Pause' : '▶️ Play';
-    toggle.setAttribute('aria-label', playing ? 'Pause music' : 'Play music');
-    toggle.setAttribute('aria-pressed', playing ? 'true' : 'false');
-  };
- 
-  toggle.addEventListener('click', () => {
-    if (audio.paused) audio.play(); else audio.pause();
+};
+
+// Run the attempt
+attemptPlay();
+
+// Toggle play/pause via the button
+toggle.addEventListener('click', (e) => {
+  // Stop the event from bubbling up and triggering the document-wide 'unlock' click
+  e.stopPropagation(); 
+  
+  if (audio.paused) {
+    audio.play().then(updateUI);
+  } else {
+    audio.pause();
     updateUI();
-  });
- 
-  // Keep UI in sync if user interacts via system controls
-  audio.addEventListener('play', updateUI);
-  audio.addEventListener('pause', updateUI);
+  }
+});
+
+// Keep UI in sync if user interacts via system media controls (like lock screen)
+audio.addEventListener('play', updateUI);
+audio.addEventListener('pause', updateUI);
