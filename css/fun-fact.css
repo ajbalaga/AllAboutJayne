@@ -1,0 +1,290 @@
+#funFact .fact-wrap {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  row-gap: 1rem;
+}
+
+
+/* ============================================================
+   🌸 FACT CARD LAYOUT
+   ============================================================ */
+#funFact .fact-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  max-width: min(960px, 92vw);
+  margin: 0.5rem auto 0;
+}
+
+/* ============================================================
+   🌸 CAPTION (slide-up)
+   ============================================================ */
+#funFact .fact {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+
+  max-width: 80%;
+  padding: 0.45rem 0.85rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #4a2f3f;
+
+  background: rgba(255, 240, 248, 0.9);
+  border: 1px solid rgba(233, 200, 108, 0.35);
+  border-radius: 12px;
+
+  box-shadow: 0 4px 10px rgba(255, 150, 190, 0.25),
+              0 0 12px rgba(255, 180, 215, 0.28);
+
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 0.45s ease-out,
+    transform 0.50s cubic-bezier(.22,1,.36,1);
+}
+
+#funFact .fact.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================
+   🌸 IMAGE WRAPPER
+   ============================================================ */
+#funFact .fact-media {
+  width: 70%;
+  aspect-ratio: 4 / 3;
+  margin-inline: auto;
+  position: relative;
+
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(233, 200, 108, 0.3);
+
+  background: linear-gradient(135deg, #ffeaf4, #ffd3ec);
+  box-shadow: 0 8px 16px rgba(255, 150, 190, 0.22),
+              0 0 24px rgba(255, 180, 215, 0.28);
+}
+
+/* Shimmer on load */
+#funFact .fact-media.loading::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.35),
+    rgba(255, 255, 255, 0.65),
+    rgba(255, 255, 255, 0.35)
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.1s linear infinite;
+}
+
+/* ============================================================
+   🌸 IMAGE SLIDE-UP TRANSITION (new + working!)
+   ============================================================ */
+#funFact #fact-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  /* Slide-up transition */
+  transition:
+    opacity 0.60s ease-out,
+    transform 0.65s cubic-bezier(.22,1,.36,1),
+    filter 0.65s ease-out;
+
+  will-change: opacity, transform, filter;
+}
+
+#funFact #fact-img.show {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+  filter: blur(0) saturate(1) !important;
+}
+
+/* ============================================================
+   🌸 FACT WRAPPER LAYOUT
+   ============================================================ */
+#funFact .fact-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  max-width: min(960px, 92vw);
+  margin: 0.5rem auto 0;
+}
+
+#funFact .slice-title.title-center {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto 0.5rem;
+}
+
+/* ============================================================
+   🌸 IMAGE WRAPPER
+   ============================================================ */
+#funFact .fact-media {
+  width: 70%;
+  aspect-ratio: 4 / 3;
+  margin-inline: auto;
+  position: relative;
+  overflow: hidden;
+
+  border-radius: 16px;
+  border: 1px solid rgba(233, 200, 108, 0.3);
+
+  background: linear-gradient(135deg, #ffeaf4, #ffd3ec);
+  box-shadow: 0 8px 16px rgba(255, 150, 190, 0.22),
+              0 0 24px rgba(255, 180, 215, 0.28);
+
+  isolation: isolate;
+}
+
+/* ============================================================
+   🌸 IMAGE – slide-up, bounce, glow
+   ============================================================ */
+#funFact #fact-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition:
+    opacity 0.60s ease-out,
+    transform 0.65s cubic-bezier(.22,1,.36,1),
+    filter 0.65s ease-out;
+
+  will-change: opacity, transform, filter;
+}
+
+#funFact #fact-img.show {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+  filter: blur(0) saturate(1) !important;
+
+  animation:
+    img-bounce 420ms 0.62s cubic-bezier(.17,.84,.44,1) 1,
+    pastel-glow 520ms 0.10s ease-out 1;
+}
+
+/* ============================================================
+   ✨ CAPTION SLIDE-UP (stagger)
+============================================================ */
+#funFact #fact-box {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+
+  max-width: 80%;
+  padding: 0.45rem 0.85rem;
+
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #4a2f3f;
+
+  background: rgba(255, 240, 248, 0.9);
+  border: 1px solid rgba(233, 200, 108, 0.35);
+  border-radius: 12px;
+
+  box-shadow: 0 4px 10px rgba(255, 150, 190, 0.25),
+              0 0 12px rgba(255, 180, 215, 0.28);
+
+  opacity: 0;
+  transform: translateY(14px);
+
+  transition:
+    opacity 420ms ease-out,
+    transform 480ms cubic-bezier(.22,1,.36,1);
+}
+
+#funFact #fact-box.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 120ms;
+}
+
+/* ============================================================
+   🌸 BUTTON BELOW IMAGE
+   ============================================================ */
+
+/* Button wrapper — keeps it centered under the image */
+#funFact .fact-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 0; /* zero gap → “sticked” to image */
+}
+
+/* The button element (shrink to content) */
+#funFact .under-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  /* no slow transitions here */
+  transition: none;
+}
+
+/* The actual pill button */
+#funFact .under-btn .btn-inner {
+  background: rgba(255, 140, 180, 0.78); /* 🌸 no gradient */
+  padding: 0.60rem 1.20rem;
+  border-radius: 999px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+
+  font-weight: 700;
+  font-size: clamp(0.95rem, 0.7vw + 0.9rem, 1.05rem);
+  color: #4a2f3f;
+
+  /* Soft shadow, no gradient glow */
+  box-shadow:
+    0 4px 10px rgba(255, 150, 200, 0.22),
+    0 0 8px rgba(255, 150, 200, 0.18);
+
+  /* Keep hover snappy */
+  opacity: 0.96;
+  transition:
+    transform 120ms cubic-bezier(.2,.9,.25,1),
+    opacity 120ms ease,
+    box-shadow 150ms ease;
+}
+
+/* Hover — no gradient, no background change */
+#funFact .under-btn:hover .btn-inner {
+  opacity: 1;
+  transform: translateY(-1px) scale(1.02);
+  box-shadow:
+    0 6px 14px rgba(255, 150, 200, 0.25),
+    0 0 10px rgba(255, 150, 200, 0.22);
+}
+
+/* Press / active */
+#funFact .under-btn:active .btn-inner {
+  transform: scale(0.95);
+  opacity: 0.9;
+}
+
+/* GIF animation — only tilt */
+#funFact .under-btn .click-gif {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 4px rgba(255, 100, 170, 0.3));
+  transition: transform 120ms ease;
+}
+
+#funFact .under-btn:hover .click-gif {
+  transform: rotate(-5deg) scale(1.04);
+}
+

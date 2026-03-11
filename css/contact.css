@@ -1,0 +1,84 @@
+#contact .contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: grid;
+  gap: 1rem;                 /* spacing between cards */
+  max-width: fit-content;    /* keeps the cutest compact layout */
+}
+
+/* Card: icon | strong | link in one row */
+#contact .contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  padding: 0.6rem 1rem;
+  border-radius: 16px;
+
+  background: rgba(255, 228, 244, 0.55);   /* soft pink bubble */
+  border: 1px solid rgba(240, 150, 200, 0.25);
+
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+#contact .contact-list li:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(255, 120, 180, 0.25);
+}
+
+/* Icon */
+#contact .contact-list .icon {
+  font-size: 1.6rem;
+  flex: 0 0 auto;
+  filter: drop-shadow(0 0 4px rgba(255,150,200,.35));
+  transition: transform .25s ease;
+}
+
+#contact .contact-list li:hover .icon {
+  transform: scale(1.15) rotate(-4deg);
+}
+
+/* Label (Email:, Facebook:, Instagram:) */
+#contact .contact-list strong {
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.3px;
+  color: #c0588e;
+  white-space: nowrap;       /* keeps label on one line */
+}
+
+/* Link */
+#contact .contact-list a {
+  flex: 1 1 auto;            /* takes remaining space */
+  min-width: 0;              /* allows wrapping */
+  word-break: break-word;
+
+  color: #b94682;
+  font-weight: 600;
+  text-decoration: none;
+
+  transition: color .25s ease, text-shadow .25s ease;
+}
+
+#contact .contact-list a:hover {
+  color: #ff7cb7;
+  text-shadow: 0 0 10px rgba(255,140,200,.4);
+}
+
+#contact .contact-list a:focus-visible {
+  outline: 2px solid rgba(255,140,200,.55);
+  outline-offset: 3px;
+  border-radius: 12px;
+}
+
+/* Subtitle */
+#contact .contact-sub {
+  margin: .35rem 0 1.6rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: .4px;
+  color: #d86aa8;
+  text-shadow: 0 0 10px rgba(255,150,200,.25);
+}

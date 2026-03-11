@@ -1,0 +1,57 @@
+.z-footer {
+  padding: 1.25rem 0 2rem;
+  background: linear-gradient(
+    to top,
+    rgba(36, 16, 26, 0.6),
+    rgba(50, 26, 40, 0.5)
+  );
+  color: #f5d9e6;
+}
+
+.footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: 1rem;
+}
+
+.footer-text {
+  margin: 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  opacity: 0.95;
+}
+
+.to-top.inline {
+  position: static;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.2px;
+
+  background: rgba(255, 170, 210, 0.75);
+  color: #4a2f3f;
+  backdrop-filter: blur(6px);
+
+  box-shadow:
+    0 6px 16px rgba(255, 120, 180, 0.22),
+    0 0 10px rgba(255, 150, 200, 0.3);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease,
+    color 0.2s ease;
+}
+
+.to-top.inline:hover,.to-top.inline:focus-visible {
+  transform: translateY(-3px);
+  color: #d36c8d;
+  box-shadow:
+    0 10px 22px rgba(255, 130, 185, 0.28),
+    0 0 18px rgba(255, 170, 220, 0.4);
+}

@@ -1,0 +1,84 @@
+.pfp {
+  margin: 0;
+}
+.pfp-img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: var(--radius);
+  box-shadow: var(--depth);
+  border: 1px solid rgba(233, 200, 108, 0.25);
+  transition: transform 220ms ease, box-shadow 220ms ease, filter 220ms ease;
+}
+.pfp-img:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--depth-2);
+  filter: saturate(1.05);
+}
+.pfp-cap {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 0.6rem;
+}
+.chunk .about-copy {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+.gal {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+.gal img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 1/1;
+  border-radius: 12px;
+  border: 1px solid rgba(233, 200, 108, 0.28);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: var(--depth);
+}
+.gal img:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--depth-2);
+}
+
+/* Global paragraph style */
+.about-copy {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #4a2f3f; /* readable sakura-plum */
+  margin-bottom: 1.4rem;
+}
+
+/* Soft pink glow for <strong> text */
+.about-copy strong {
+  color: #c84684;
+  font-weight: 600;
+  text-shadow: 0 0 6px rgba(255, 180, 215, 0.45),
+    0 0 10px rgba(255, 160, 200, 0.25);
+}
+
+/* Beautiful animated underline for the name */
+.name-highlight {
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.name-highlight::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 3px;
+
+  background: linear-gradient(90deg, #ffb6d9, #ff82bb, #ff96c7, #ffb6d9);
+  border-radius: 20px;
+  box-shadow: 0 2px 6px rgba(255, 160, 210, 0.4);
+
+  animation: underlineFade 1.4s ease forwards;
+}

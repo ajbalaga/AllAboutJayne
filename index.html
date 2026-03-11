@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alliezza Jayne Balaga • Portfolio</title>
+  <meta name="description" content="Personal web profile with elegant pink & gold palette, theme toggle, peony borders, Disneyland tracker, and curated photo galleries." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/fun-fact.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/disneyland-tracker.css" />
+  <link rel="stylesheet" href="css/gallery.css" />
+  <link rel="stylesheet" href="css/vibe.css" />
+   <link rel="stylesheet" href="css/about.css" />
+
+  <!-- Script -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div id="top">
+    <a href="#main" class="u-skip">Skip to main</a>
+    <header class="z-header">
+      <div class="shell header-row">
+        <div class="brand">
+          <span class="brand-title">Alliezza Jayne Balaga</span>
+          <span class="brand-tag">friends call me Jayne • soft‑girl dev in pink mode 🎀💻</span>
+        </div>
+        <nav class="z-nav" aria-label="Primary">
+          <button id="menu-toggle"
+                  class="nav-toggle"
+                  aria-expanded="false"
+                  aria-controls="nav-menu">
+            <span class="sr-only">Toggle navigation</span>
+            <span aria-hidden="true">☰</span>
+          </button>
+          <ul id="nav-menu" class="nav-list">
+            <li><a class="nav-link" href="#about">Me</a></li>
+            <li><a class="nav-link" href="#funFact">Facts</a></li>
+            <li><a class="nav-link" href="#vibes">Vibes</a></li>
+            <li><a class="nav-link" href="#tracker">Tracker</a></li>
+            <li><a class="nav-link" href="#gallery">Gallery</a></li>
+            <li><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <!-- ABOUT ME-->
+      <section id="about" class="slice slice-alt">
+        <div class="shell grid grid-2">
+          <figure class="pfp reveal">
+            <img class="pfp-img" src="images/jane-portrait.jpg" alt="Portrait of Alliezza Jayne (Jane) Balaga" />
+          </figure>
+          <div class="chunk reveal">
+            <h2 class="slice-title">About Me</h2>
+            <p class="about-copy">
+              I’m <strong><span class="name-highlight">“Jane”</span></strong> — obsessed with <strong>pink</strong> and my pup
+              <strong>Cookie</strong> 🐶. I graduated from <strong>Mapúa Institute of Technology</strong> in Computer Engineering Major in
+              <strong>Robotics</strong> 🤖. Even while studying engineering, I kept my girly side alive 💗:
+              I love fashion 👠 and I’ve joined multiple pageants 👑 (heels + HTML, why not?).
+            </p>
+            <p class="about-copy">
+              Now I work as a <strong>software developer</strong> 🧑🏻‍💻, and I’m big on <strong>work–life balance</strong> ✨:
+              shipping code without letting it run my whole life. these days I’m juggling <em>work</em> 💼, <em>studies</em> 📚, <em>date nights</em> 🍷, <em>condo renovations</em> 🏠, and
+              <em>wedding moodboard pegs</em> 👰‍♀️ — all while keeping the aesthetic.
+            </p>          
+          </div>
+        </div>
+      </section>
+      <!-- FUN FACT -->
+      <section id="funFact" class="slice slice-alt">
+        <div class="shell">
+          <h2 class="slice-title">Fun Facts</h2>
+          <div class="fact-card">
+            <figure class="fact-media loading reveal" aria-live="polite">
+              <!-- Main image -->
+              <img id="fact-img" class="peony-border" />
+              <!-- SR caption -->
+              <figcaption class="sr-only" id="fact-caption"></figcaption>
+              <!-- Caption badge (on-image badge) -->
+              <p id="fact-box" class="fact" role="status" aria-live="polite"></p>
+            </figure>
+            <div class="fact-actions">
+              <button id="btn-fact"
+                      class="btn-juice peony-border fact-btn under-btn"
+                      aria-controls="fact-box fact-img">
+                <span class="btn-inner">
+                  <img src="./images/click.gif" alt="" class="click-gif" />
+                  <span class="btn-text">Spill a fun fact</span>
+                  <span class="emoji" aria-hidden="true">✨</span>
+                </span>
+                <span class="btn-ripple" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+        
+        </div>
+      </section>      
+      <!-- VIBES -->
+      <section id="vibes" class="slice">
+        <div class="shell">
+          <h2 class="slice-title">Vibes</h2>
+          <div class="vibe-cards">
+
+            <article class="vibe peony-border reveal">
+              <h3 class="vibe-title">Pinks, Sakura & Peonies 🌸</h3>
+              <p class="vibe-copy">Soft-girl palettes, dreamy florals, and everything pretty.</p>
+            </article>
+
+            <article class="vibe peony-border reveal">
+              <h3 class="vibe-title">Sanrio 🎀</h3>
+              <p class="vibe-copy">Hello Kitty supremacy. Kuromi, Cinnamoroll, and My Melody keep me sane 🫶</p>
+            </article>
+
+            <article class="vibe peony-border reveal">
+              <h3 class="vibe-title">Nintendo & Gaming 🎮</h3>
+              <p class="vibe-copy">Mario girl forever — yes, I visited Nintendo World ✨</p>
+            </article>
+
+            <article class="vibe peony-border reveal">
+              <h3 class="vibe-title">Travel Goals ✈️</h3>
+              <p class="vibe-copy">KR, DPS, TW, HK, MO, SG, BKK, JP (too many times lol). Manifesting: Disneyland world tour + Europe honeymoon.</p>
+            </article>
+
+            <article class="vibe peony-border reveal">
+              <h3 class="vibe-title">Beach Life 🏝️🌊</h3>
+              <p class="vibe-copy">Sunkissed from LU, Palawan, Siargao, Zambales, Cebu, Bohol, Boracay, Batangas.</p>
+            </article>
+
+            <article class="vibe peony-border reveal">
+              <h3 class="vibe-title">Foodie Life 🍜</h3>
+              <p class="vibe-copy">I bond through food. Always hungry, always exploring new cravings.</p>
+            </article>
+
+            <article class="vibe peony-border reveal">
+              <h3 class="vibe-title">Movies & K‑dramas 🎬</h3>
+              <p class="vibe-copy">Plot twists from Hollywood, emotional damage from K‑dramas. Balance.</p>
+            </article>
+
+            <article class="vibe peony-border reveal">
+              <h3 class="vibe-title">Pageants & Pink Tech 👑</h3>
+              <p class="vibe-copy">Switching between gowns and git commits. Soft girl in Code vibe.</p>
+            </article>
+            
+            <article class="vibe peony-border reveal">
+              <h3 class="vibe-title">BLINK Fan Girl 💗🖤✨</h3>
+              <p class="vibe-copy">
+                Obsessed with BLACKPINK — zero skips, all vibes, instant mood booster. 🎧💅
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- DISNEYLAND TRACKER -->
+      <section id="tracker" class="slice">
+      <div class="shell">
+        <h2 class="slice-title">Disneyland World Tour</h2>
+        <p class="reveal">The ultimate Disney park-hopper checklist.</p>
+        <div class="tracker reveal">
+          <div class="tracker-progress"
+              role="progressbar"
+              aria-valuemin="0"
+              aria-valuemax="7"
+              aria-valuenow="0"
+              aria-label="Disneyland parks visited">
+            <div class="tracker-bar" style="width:0%"></div>
+          </div>
+          <p class="tracker-stats">
+            <span id="parks-done">0</span> /
+            <span id="parks-total">7</span> complete
+          </p>
+          <ul class="parks-list sakura-scope">
+            <li><label><input type="checkbox" class="park heart" data-key="california"> 🏰 Disneyland Park California</label></li>
+            <li><label><input type="checkbox" class="park heart" data-key="florida"> 🌟 Walt Disney World Resort </label></li>
+            <li><label><input type="checkbox" class="park heart" data-key="tokyo"> 🎌 Tokyo Disneyland </label></li>
+            <li><label><input type="checkbox" class="park heart" data-key="tokyo2" checked> 🌊 Tokyo DisneySea </label></li>
+            <li><label><input type="checkbox" class="park heart" data-key="paris"> 🥐 Disneyland Paris </label></li>
+            <li><label><input type="checkbox" class="park heart" data-key="hongkong" checked> 🐉 Hong Kong Disneyland </label></li>
+            <li><label><input type="checkbox" class="park heart" data-key="shanghai"> 🐼 Shanghai Disney Resort </label></li>
+          </ul>
+        </div><!-- tracker -->
+      </div><!-- shell -->
+      </section>
+
+      <!-- GALLERY -->
+      <section id="gallery" class="slice slice-alt">
+        <div class="shell">
+          <h2 class="slice-title">Moments & Memories</h2>
+
+          <!-- University -->
+          <div class="gallery-section reveal">
+            <h3 class="gallery-title">Late‑night grinds, big wins, and core‑memory semesters 🎓✨</h3>
+            <div class="gallery-grid">
+              <figure class="shot peony-border"><img src="images/gallery/university/univ-1.jpg" alt="University photo 1"/></figure>
+              <figure class="shot peony-border"><img src="images/gallery/university/univ-2.jpg" alt="University photo 2"/></figure>
+              <figure class="shot peony-border"><img src="images/gallery/university/univ-3.jpg" alt="University photo 3"/></figure>
+            </div>
+          </div>
+
+          <!-- Pageant -->
+          <div class="gallery-section reveal">
+            <h3 class="gallery-title">Grace, glam, and growth — pageant era unlocked ✨👑</h3>
+            <div class="gallery-grid">
+              <figure class="shot peony-border"><img src="images/gallery/pageant/pageant-1.jpg" alt="Pageant photo 1"/></figure>
+              <figure class="shot peony-border"><img src="images/gallery/pageant/pageant-2.jpg" alt="Pageant photo 2"/></figure>
+              <figure class="shot peony-border"><img src="images/gallery/pageant/pageant-3.jpg" alt="Pageant photo 3"/></figure>
+            </div>
+          </div>
+
+          <!-- International Travel -->
+          <div class="gallery-section reveal"><h3 class="gallery-title">Skyline, dim sum, and photo‑dump perfection 🥟🌃✨</h3>
+            <div class="gallery-grid">
+              <figure class="shot peony-border"><img src="images/gallery/travel/hk/hk-1.jpg" alt="Hong Kong photo 1"/></figure>
+              <figure class="shot peony-border"><img src="images/gallery/travel/hk/hk-2.jpg" alt="Hong Kong photo 2"/></figure>
+            </div>
+          </div>
+          <div class="gallery-section reveal"><h3 class="gallery-title">Pastel streets, egg tarts, and a lil’ Vegas sparkle — Macau vibes ✨🏙️</h3>
+            <div class="gallery-grid">
+              <figure class="shot peony-border"><img src="images/gallery/travel/macau/macau-1.jpg" alt="Macau photo 1"/></figure>
+              <figure class="shot peony-border"><img src="images/gallery/travel/macau/macau-2.jpg" alt="Macau photo 2"/></figure>
+            </div>
+          </div>
+          <div class="gallery-section reveal"><h3 class="gallery-title">Milk tea, street food, and endless foodie wins — Taiwan hits 🎋🍡🧋</h3>
+            <div class="gallery-grid">
+              <figure class="shot peony-border"><img src="images/gallery/travel/taiwan/taiwan-1.jpg" alt="Taiwan photo 1"/></figure>
+              <figure class="shot peony-border"><img src="images/gallery/travel/taiwan/taiwan-2.jpg" alt="Taiwan photo 2"/></figure>
+            </div>
+          </div>
+          <div class="gallery-section reveal"><h3 class="gallery-title">City clean, food elite, vibes unmatched — Singapore ✨🦁🌃</h3>
+            <div class="gallery-grid">
+              <figure class="shot peony-border"><img src="images/gallery/travel/singapore/singapore-1.jpg" alt="Singapore photo 1"/></figure>
+              <figure class="shot peony-border"><img src="images/gallery/travel/singapore/singapore-2.jpg" alt="Singapore photo 2"/></figure>
+            </div>
+          </div>
+          <div class="gallery-section reveal"><h3 class="gallery-title">Cafés, skincare, K‑fashion, and city nights — Korea is a whole vibe 🛍️</h3>
+            <div class="gallery-grid">
+              <figure class="shot peony-border"><img src="images/gallery/travel/skorea/skorea-1.jpg" alt="South Korea photo 1"/></figure>
+              <figure class="shot peony-border"><img src="images/gallery/travel/skorea/skorea-2.jpg" alt="South Korea photo 2"/></figure>
+              <figure class="shot peony-border"><img src="images/gallery/travel/skorea/skorea-3.jpg" alt="South Korea photo 3"/></figure>
+            </div>
+          </div>
+          <div class="gallery-section reveal"><h3 class="gallery-title">Soft lights, sakura blooms, and serotonin — Japan 💗🌸✨</h3>
+            <div class="gallery-grid">
+              <figure class="shot peony-border"><img src="images/gallery/travel/japan/japan-1.jpg" alt="Japan photo 1"/></figure>
+              <figure class="shot peony-border"><img src="images/gallery/travel/japan/japan-2.jpg" alt="Japan photo 2"/></figure>
+              <figure class="shot peony-border"><img src="images/gallery/travel/japan/japan-3.jpg" alt="Japan photo 3"/></figure>
+              <figure class="shot peony-border"><img src="images/gallery/travel/japan/japan-4.jpg" alt="Japan photo 4"/></figure>
+            </div>
+          </div>
+          <div class="gallery-section reveal"><h3 class="gallery-title">Smoothie bowls, temples, waves — Bali is the soft‑life dream 🥥🌺</h3>
+            <div class="gallery-grid">
+              <figure class="shot peony-border"><img src="images/gallery/travel/bali/bali-1.jpg" alt="Bali photo 1"/></figure>
+              <figure class="shot peony-border"><img src="images/gallery/travel/bali/bali-2.jpg" alt="Bali photo 2"/></figure>
+            </div>
+          </div>
+
+          <!-- Beaches (PH) -->
+          <div class="gallery-section reveal"><h3 class="gallery-title">Coffee, waves, and after‑sun dinners — La Union hits different 🏄‍♀️</h3>
+            <div class="gallery-grid">
+              <figure class="shot peony-border"><img src="images/gallery/beaches/lu/lu-1.jpg" alt="La Union beach photo 1"/></figure>
+              <figure class="shot peony-border"><img src="images/gallery/beaches/lu/lu-2.jpg" alt="La Union beach photo 2"/></figure>
+            </div>
+          </div>
+          <div class="gallery-section reveal"><h3 class="gallery-title">Waves, palm trees, and slow mornings — Siargao energy 🌴🌤️</h3>
+            <div class="gallery-grid">
+              <figure class="shot peony-border"><img src="images/gallery/beaches/siargao/siargao-1.jpg" alt="Siargao beach photo 1"/></figure>
+              <figure class="shot peony-border"><img src="images/gallery/beaches/siargao/siargao-2.jpg" alt="Siargao beach photo 2"/></figure>
+              <figure class="shot peony-border"><img src="images/gallery/beaches/siargao/siargao-3.jpg" alt="Siargao beach photo 3"/></figure>
+              <figure class="shot peony-border"><img src="images/gallery/beaches/siargao/siargao-4.jpg" alt="Siargao beach photo 4"/></figure>
+            </div>
+          </div>
+          <div class="gallery-section reveal"><h3 class="gallery-title">Bonfires, beaches, and chill weekend escapes — Zambales energy 🌊🔥</h3>
+            <div class="gallery-grid">
+              <figure class="shot peony-border"><img src="images/gallery/beaches/zambales/zambales-1.jpg" alt="Zambales beach photo 1"/></figure>
+              <figure class="shot peony-border"><img src="images/gallery/beaches/zambales/zambales-2.jpg" alt="Zambales beach photo 2"/></figure>
+            </div>
+          </div>
+          <div class="gallery-section reveal"><h3 class="gallery-title">Quick escapes, calm beaches, and cozy weekends — Batangas 🏖️</h3>
+            <div class="gallery-grid">
+              <figure class="shot peony-border"><img src="images/gallery/beaches/batangas/batangas-1.jpg" alt="Batangas beach photo 1"/></figure>
+              <figure class="shot peony-border"><img src="images/gallery/beaches/batangas/batangas-2.jpg" alt="Batangas beach photo 2"/></figure>
+              <figure class="shot peony-border"><img src="images/gallery/beaches/batangas/batangas-3.jpg" alt="Batangas beach photo 2"/></figure>
+            </div>
+          </div>
+          <div class="gallery-section reveal"><h3 class="gallery-title">Chocolate Hills, tarsiers, and crystal waters — Bohol slays 🐒🌴💖</h3>
+            <div class="gallery-grid">
+              <figure class="shot peony-border"><img src="images/gallery/beaches/bohol/bohol-1.jpg" alt="Bohol beach photo 1"/></figure>
+              <figure class="shot peony-border"><img src="images/gallery/beaches/bohol/bohol-2.jpg" alt="Bohol beach photo 2"/></figure>
+            </div>
+          </div>
+          <div class="gallery-section reveal"><h3 class="gallery-title">Whale sharks, beaches, waterfalls, and city food trips — Cebu 🐳🍢✨</h3>
+            <div class="gallery-grid">
+              <figure class="shot peony-border"><img src="images/gallery/beaches/cebu/cebu-1.jpg" alt="Cebu beach photo 1"/></figure>
+              <figure class="shot peony-border"><img src="images/gallery/beaches/cebu/cebu-2.jpg" alt="Cebu beach photo 2"/></figure>
+            </div>
+          </div>
+          <div class="gallery-section reveal"><h3 class="gallery-title">White sand, blue water, and golden hour perfection — Bora vibes 🌅🏝️💖</h3>
+            <div class="gallery-grid">
+              <figure class="shot peony-border"><img src="images/gallery/beaches/boracay/boracay-1.jpg" alt="Boracay beach photo 1"/></figure>
+              <figure class="shot peony-border"><img src="images/gallery/beaches/boracay/boracay-2.jpg" alt="Boracay beach photo 2"/></figure>
+            </div>
+          </div>
+          <div class="gallery-section reveal"><h3 class="gallery-title">Hidden lagoons, pretty beaches, and unreal views — Palawan is magic 🐚🌊✨</h3>
+            <div class="gallery-grid">
+              <figure class="shot peony-border"><img src="images/gallery/beaches/palawan/palawan-1.jpg" alt="Palawan beach photo 1"/></figure>
+              <figure class="shot peony-border"><img src="images/gallery/beaches/palawan/palawan-2.jpg" alt="Palawan beach photo 2"/></figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="slice slice-alt">
+        <div class="shell">
+
+          <h2 class="slice-title contact-title">Hit Me Up 💌✨</h2>
+          <p class="contact-sub">Let’s Connect 🌸</p>
+
+          <ul class="ping-list reveal contact-list">
+            <li>
+              <span class="icon">📧</span>
+              <strong>Email:</strong>
+              <a href="mailto:ajbbalaga@gmail.com">ajbbalaga@gmail.com</a>
+            </li>
+
+            <li>
+              <span class="icon">📘</span>
+              <strong>Facebook:</strong>
+              <a href="https://www.facebook.com/LizzaJayne" target="_blank" rel="noopener">
+                facebook.com/LizzaJayne
+              </a>
+            </li>
+
+            <li>
+              <span class="icon">📸</span>
+              <strong>Instagram:</strong>
+              <a href="https://instagram.com/lizzzajayne" target="_blank" rel="noopener">
+                @lizzzajayne
+              </a>
+            </li>
+          </ul>
+
+        </div>
+      </section>
+    </main>      
+    <footer class="z-footer">
+      <div class="shell footer-row">
+        <p class="footer-text">
+          © <span id="year"></span> Designed with love, glitter & caffeine 💕
+        </p>
+        <a class="to-top inline" href="#top" aria-label="Back to top"> Return to Top (˘͈ᵕ ˘͈♡) ⬆️</a>
+      </div>
+    </footer>
+    <!-- Sakura petals -->
+    <div class="sakura" style="left: 5%; animation-duration: 9s;">🌸</div>
+    <div class="sakura" style="left: 15%; animation-duration: 12s; font-size: 26px;">🌸</div>
+    <div class="sakura" style="left: 25%; animation-duration: 10s; font-size: 36px;">🌸</div>
+    <div class="sakura" style="left: 35%; animation-duration: 14s;">🌸</div>
+    <div class="sakura" style="left: 45%; animation-duration: 11s; font-size: 30px;">🌸</div>
+    <div class="sakura" style="left: 55%; animation-duration: 13s;">🌸</div>
+    <div class="sakura" style="left: 65%; animation-duration: 10s; font-size: 28px;">🌸</div>
+    <div class="sakura" style="left: 75%; animation-duration: 15s;">🌸</div>
+    <div class="sakura" style="left: 85%; animation-duration: 12s; font-size: 34px;">🌸</div>
+    <div class="sakura" style="left: 92%; animation-duration: 9.5s;">🌸</div>
+  </div>
+</body>
+</html>

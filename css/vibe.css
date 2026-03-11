@@ -1,0 +1,113 @@
+/* Grid: default 3 cols, switch to 1 on mobile */
+.vibe-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem 1.2rem;
+  margin-top: 1rem;
+}
+
+.vibe {  
+  position: relative; /* needed for ::before/::after positioning */
+  background: rgba(255, 240, 248, 0.65);                 /* soft pastel pink */
+  border: 1px solid rgba(211, 108, 141, 0.18);           /* subtle sakura border */
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+  box-shadow: 0 8px 22px rgba(255, 150, 200, 0.16);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  will-change: transform, box-shadow;
+  overflow: clip; /* keeps shimmer/petals inside rounded corners (modern) */
+}
+
+.vibe-title {
+  position: relative;
+  z-index: 2; /* above overlays */
+  margin: 0 0 0.35rem;
+  font-size: 1.1rem;
+
+  /* Fallback color for older browsers or missing vars */
+  color: #c84684; /* sakura-peony readable pink */
+
+  /* Gradient text (modern) */
+  background: linear-gradient(90deg, var(--pink-peony-soft, #f7b3cf), var(--pink-peony, #e487b8));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent; /* ensures gradient shows in WebKit */
+  text-shadow: 0 1px 3px rgba(255, 150, 200, 0.25); /* soft glow */
+  pointer-events: none; /* never blocks clicks */
+  font-family: "Playfair Display", serif; /* elegant but readable */
+  font-weight: 600;
+}
+
+
+/* Hover: gentle lift + gold ring + rosy ambient */
+.vibe:hover {
+  transform: translateY(-6px);
+  border-color: rgba(239, 183, 192, 0.55);
+  box-shadow:
+    0 0 0 3px rgba(212, 175, 55, 0.4),         /* gold ring */
+    0 10px 26px rgba(242, 162, 183, 0.35),     /* rosy glow */
+    0 18px 38px rgba(0, 0, 0, 0.1);            /* depth */
+  opacity: 1 !important;
+}
+
+/* Petal blush in the top-right (decorative only) */
+.vibe::before {
+  content: "";
+  position: absolute;
+  inset: -14% -14% auto auto; /* top/right zone */
+  width: 62%;
+  height: 62%;
+  border-radius: 50%;
+  pointer-events: none;
+  background:
+    radial-gradient(closest-side, var(--pink-sakura, #ffb6d9) 0%, transparent 70%),
+    radial-gradient(closest-side, rgba(238, 151, 173, 0.35) 0%, transparent 70%);
+  opacity: 0.35;
+  filter: blur(10px);
+  transform: translate(14px, -14px);
+}
+
+/* Gold shimmer veil (very subtle, animates on hover only) */
+.vibe::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    120deg,
+    rgba(212, 175, 55, 0.10) 0%,
+    rgba(212, 175, 55, 0.00) 40%,
+    rgba(212, 175, 55, 0.10) 60%,
+    rgba(212, 175, 55, 0.00) 100%
+  );
+  background-size: 200% 100%;
+  opacity: 0.25;
+  mix-blend-mode: soft-light;
+  transition: opacity 200ms ease;
+}
+
+.vibe:hover::after {
+  animation: shimmer 1100ms ease forwards;
+}
+
+/* Shimmer keyframes (kept from your intent) */
+@keyframes shimmer {
+  0%   { background-position: 0% 0%;   opacity: 0.15; }
+  50%  { background-position: 100% 0%; opacity: 0.30; }
+  100% { background-position: 200% 0%; opacity: 0.20; }
+}
+
+/* Tablet (≤1100px): 2 columns */
+@media (max-width: 1100px) {
+  .vibe-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile (≤700px): 1 column */
+@media (max-width: 700px) {
+  .vibe-cards {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+}

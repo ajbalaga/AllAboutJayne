@@ -1,0 +1,208 @@
+input[type="checkbox"].park {
+  width: 18px;
+  height: 18px;
+  accent-color: #ff6fae; /* bright barbie pink */
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+input[type="checkbox"].park:checked {
+  transform: scale(1.2);
+}
+
+/* --- Heart checkbox (custom) --- */
+input[type="checkbox"].heart {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1.35rem; /* slightly bigger box */
+  height: 1.35rem;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+
+  display: inline-grid;
+  place-items: center;
+
+  position: relative;
+  top: 2px; /* baseline alignment with text */
+  outline: none;
+}
+
+/* Unchecked heart — BIG version */
+input[type="checkbox"].heart::before {
+  content: "♡";
+  font-size: 1.45rem; /* increased size */
+  line-height: 1;
+  color: #ff6fae;
+  filter: drop-shadow(0 0 0 transparent);
+
+  transition: transform 0.22s ease, color 0.22s ease, text-shadow 0.22s ease,
+    filter 0.22s ease;
+}
+
+/* Hover (big + soft glow + neon blush) */
+input[type="checkbox"].heart:hover::before {
+  transform: scale(1.12);
+  color: #ff8fc8;
+  text-shadow: 0 0 4px rgba(255, 170, 210, 0.55),
+    0 0 6px rgba(255, 140, 200, 0.45);
+  filter: drop-shadow(0 0 6px rgba(255, 170, 210, 0.35));
+}
+
+/* Focus-visible ring for accessibility */
+input[type="checkbox"].heart:focus-visible {
+  outline: 2px solid rgba(255, 120, 180, 0.55);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Checked heart — slightly bigger POP */
+input[type="checkbox"].heart:checked::before {
+  content: "❤";
+  color: #ff3c8f;
+  transform: scale(1.22);
+  text-shadow: 0 0 8px rgba(255, 90, 160, 0.55),
+    0 0 10px rgba(255, 110, 180, 0.35);
+  filter: drop-shadow(0 0 10px rgba(255, 110, 180, 0.25));
+}
+
+/* --- Tracker Container --- */
+.tracker {
+  margin-top: 1rem;
+}
+
+/* --- Progress Track --- */
+.tracker-progress {
+  height: 10px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f1f5f9;
+  border: 1px solid rgba(233, 200, 108, 0.25);
+  box-shadow: inset 0 2px 6px rgba(255, 130, 175, 0.25);
+}
+
+/* --- Progress Fill + Shimmer --- */
+.tracker-bar {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #ff9acb, #ff6fae, #ff85c1);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  transition: width 300ms ease;
+}
+
+.tracker-bar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0.55) 50%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  transform: translateX(-100%);
+  animation: shimmer 2s infinite;
+}
+
+/* --- Stats --- */
+.tracker-stats {
+  margin: 0.6rem 0 1rem;
+  font-family: "Poppins", sans-serif;
+  color: #5a3b4e;
+  font-weight: 500;
+}
+
+/* --- Parks List Container --- */
+.parks-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem 1.1rem;
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+
+/* --- Readable Labels --- */
+.parks-list label {
+  display: grid;
+  grid-template-columns: auto 1fr; /* heart | text */
+  align-items: start;
+  column-gap: 0.6rem;
+  row-gap: 2px;
+  cursor: pointer;
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-size: clamp(0.98rem, 2.2vw, 1.1rem);
+  color: #5a3b4e; /* readable deep sakura plum */
+  font-weight: 600;
+}
+
+/* Title + location pack; allows nice wrapping */
+.parks-list .title {
+  display: inline-block;
+  line-height: 1.35;
+  word-break: break-word;
+}
+
+/* --- Subtle item sparkle on hover --- */
+.parks-list li {
+  position: relative;
+}
+
+.parks-list li::after {
+  content: "✦";
+  position: absolute;
+  right: -10px;
+  top: -6px;
+  font-size: 0.85rem;
+  opacity: 0;
+  color: #ffb3e6;
+  transform: scale(0.6);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+}
+
+.parks-list li:hover::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* --- Progress bar styling (optional) --- */
+.parks-progress {
+  margin: 10px 0 14px;
+}
+
+.parks-progress .bar {
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 220, 235, 0.7);
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(233, 200, 108, 0.22);
+}
+
+.parks-progress .bar .fill {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #ff9ec7, #ffc2df);
+  border-radius: inherit;
+  transition: width 0.35s ease;
+}
+
+.parks-progress .count {
+  margin: 6px 0 0;
+  font-weight: 600;
+  color: #5a3b4e;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+

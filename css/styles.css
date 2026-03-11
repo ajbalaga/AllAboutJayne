@@ -1,0 +1,419 @@
+/* --- Reset & Tokens --- */
+*,
+*::before,*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  /* Accents */
+  --gold: #d4af37; /* classic metallic gold */
+  --pink-elegant: #efb7c0; /* refined pink */
+  --pink-sakura: #fadadd; /* cherry blossom */
+  --pink-peony: #d36c8d; /* rich peony */
+  --pink-peony-soft: #f2a2b7; /* lighter peony */
+
+  --ring: #e9c86c; /* soft gold ring */
+  --radius: 14px;
+  --depth: 0 10px 30px rgba(2, 6, 23, 0.45);
+  --depth-2: 0 16px 36px rgba(2, 6, 23, 0.6);
+
+  --glow-1: rgba(239, 183, 192, 0.14); /* elegant pink */
+  --glow-2: rgba(250, 218, 221, 0.18); /* sakura */
+  --bg-base: var(--bg-deep);
+  --text-color: var(--ink-on-dark);
+}
+
+/* LIGHT THEME overrides */
+html[data-theme="light"] {
+  --ink-on-dark: #1f2937;
+  --ink-soft: #334155;
+  --muted: #475569;
+
+  --bg-deep: #ffffff;
+  --bg-soft: #f8fafc;
+
+  --gold: #c59b2d;
+  --pink-elegant: #e8a5b1;
+  --pink-sakura: #ffe6ec;
+  --pink-peony: #c25a7e;
+  --pink-peony-soft: #ee97ad;
+
+  --ring: #d8b85d;
+  --glow-1: rgba(232, 165, 177, 0.22);
+  --glow-2: rgba(255, 230, 236, 0.28);
+  --bg-base: var(--bg-deep);
+  --text-color: var(--ink-on-dark);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 0;
+
+  /* Smooth transitions */
+  transition: background-color 240ms ease, color 240ms ease;
+
+  /* Feminine modern typeface */
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto,
+    sans-serif;
+  line-height: 1.7;
+  color: var(--text-color);
+  letter-spacing: 0.3px;
+
+  /* Barbie-core Sakura Gradient */
+  background-color: #ffeaf4;
+  background-image: radial-gradient(
+      circle at 80% -10%,
+      rgba(255, 182, 193, 0.65),
+      transparent 70%
+    ),
+    radial-gradient(
+      circle at -10% 20%,
+      rgba(255, 215, 235, 0.75),
+      transparent 70%
+    ),
+    linear-gradient(135deg, #ffeaf4 0%, #ffd3ec 50%, #ffe1f7 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* Helpers */
+.shell {
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+  padding: 1.25rem 0;
+}
+.u-skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+}
+.u-skip:focus {
+  left: 0.75rem;
+  top: 0.75rem;
+  background: var(--pink-elegant);
+  color: #0b1220;
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+  z-index: 999;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.grid-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.slice {
+  padding: 4rem 0;
+}
+
+.slice-alt {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.slice-title {
+  margin: 0 0 0.4em;
+  letter-spacing: 0.3px;
+  position: relative;
+  display: inline-block;
+  font-family: "Great Vibes", cursive;
+  font-size: 3rem;
+  color: #d64aa8;
+  text-shadow: 0 3px 8px rgba(255, 160, 200, 0.45);
+}
+
+.slice-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 3px;
+  width: 56%;
+  background: linear-gradient(90deg, var(--gold), var(--pink-peony-soft));
+  border-radius: 999px;
+}
+
+/* Peony Gradient Border Flourish */
+.peony-border {
+  position: relative;
+  isolation: isolate;
+  padding: 6px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #fcd9e8, #ffd2f0, #f7a8d0);
+}
+
+.peony-border::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    var(--gold),
+    var(--pink-peony),
+    var(--pink-sakura)
+  );
+  z-index: 0;
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 180ms ease, transform 180ms ease;
+  pointer-events: none;
+}
+
+.peony-border:hover::before,.peony-border:focus-visible::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.vibe,.btn-juice,.shot {
+  position: relative;
+  z-index: 1;
+  background-clip: padding-box;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Playfair Display", serif;
+  color: #b7287e; /* deep sakura pink */
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 6px rgba(255, 140, 180, 0.35);
+}
+
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2.3rem;
+}
+
+body::before {
+  content: "🌸";
+  position: fixed;
+  font-size: 40px;
+  opacity: 0.2;
+  animation: float 12s infinite linear;
+  top: -10%;
+  left: 10%;
+}
+
+/* Sakura Petal Generator */
+.sakura {
+  position: fixed;
+  top: -10%;
+  font-size: 32px;
+  opacity: 0.25;
+  animation: fall linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* --- Scroll reveal --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px) scale(0.995);
+  transition: opacity 420ms ease, transform 420ms ease;
+  color: #5a3b4e;
+  font-weight: 500;
+  font-size: large;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Hover/focus glow ring for any gallery image */
+.gallery-grid img,.gal img {
+  transition: transform 180ms ease, box-shadow 220ms ease, filter 180ms ease;
+}
+
+.gallery-grid img:hover,.gallery-grid img:focus-visible,.gal img:hover,.gal img:focus-visible {
+  transform: translateY(-2px);
+  outline: 2px solid transparent; /* keep focus ring without default outline */
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.75),
+    /* gold ring */ 0 0 18px rgba(242, 162, 183, 0.45),
+    /* peony glow */ 0 0 34px rgba(250, 218, 221, 0.35),
+    /* sakura glow */ 0 14px 40px rgba(2, 6, 23, 0.45); /* depth */
+}
+
+/* 🧩 mobile */
+@media (max-width: 700px) {
+  
+.nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;  /* above dropdown */
+  }
+
+  .nav-list {
+    position: absolute;
+    top: 100%;
+    right: 1rem;
+
+    display: none;                 /* hidden until .open */
+    flex-direction: column;
+    gap: 0.5rem;
+
+    padding: 0.75rem;
+    border-radius: 12px;
+    border: 1px solid rgba(197,155,45,0.28);
+
+    background: rgba(255,230,240,0.88);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+
+    z-index: 2;
+  }
+
+  .nav-list.open {
+    display: flex;
+  }
+
+  .brand-tag {
+    font-size: 0.8rem;
+    margin-top: 4px;
+  }
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .gal {
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+  }
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }    
+  .parks-list {
+    grid-template-columns: 1fr !important;
+  }
+  .footer-row {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .to-top.inline {
+    margin-top: 0.4rem;
+  }
+  /* Force burger visible on mobile */
+  .z-nav .nav-toggle {
+    display: inline-flex !important;  /* 👈 defeats any stray display:none */
+    align-items: center;
+    justify-content: center;
+    z-index: 3;                       /* above the dropdown */
+  }
+
+  /* Hide dropdown until opened; anchor it to header-row */
+  .z-nav .nav-list {
+    position: absolute;
+    top: 100%;
+    right: 1rem;
+
+    display: none;                    /* hidden by default */
+    flex-direction: column;
+    gap: 0.5rem;
+
+    padding: 0.75rem;
+    border-radius: 12px;
+    border: 1px solid rgba(197,155,45,0.28);
+
+    background: rgba(255,230,240,0.88);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+
+    z-index: 2;                       /* below the toggle */
+  }
+
+  .z-nav .nav-list.open {
+    display: flex !important;         /* ensure it shows when opened */
+  }
+  
+}
+
+
+/* 🧩no animation for mobile */
+@media (prefers-reduced-motion: reduce) {
+
+  /* Disable transitions */
+  .z-header,
+  .nav-link,
+  .nav-toggle,
+  #contact .contact-list li,
+  #contact .contact-list .icon,
+  #contact .contact-list a {
+    transition: none !important;
+  }
+
+  /* Disable transforms + animations */
+  .vibe:hover,
+  #contact .contact-list li:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+
+  .vibe::after,
+  .vibe:hover::after {
+    animation: none !important;
+  }
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: 0% 0;
+  }
+}
+
+@keyframes fall {
+
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(120vh) translateX(20px) rotate(360deg);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(120vh) rotate(360deg);
+  }
+}
+
+
+
+
+
+
+
+
+

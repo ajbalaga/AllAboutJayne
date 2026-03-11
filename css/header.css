@@ -1,0 +1,131 @@
+
+.z-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  background: rgba(255, 200, 225, 0.55);
+  backdrop-filter: blur(14px);
+
+  border-radius: 0 0 40px 40px; 
+  border-bottom: 4px solid transparent;
+  border-image: linear-gradient(90deg, #ffd6ec, #f8b8d7, #ffd6ec) 1;
+
+  box-shadow:
+    0 6px 18px rgba(255,150,200,0.25),
+    0 0 12px rgba(255,160,210,0.20);
+
+  transition: background 0.35s ease, transform 0.35s ease;
+
+  isolation: isolate; /* prevents overlap glitches */
+}
+
+
+/* ===========================
+   Header Row
+   =========================== */
+
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-block: 0.75rem;
+  position: relative;
+}
+
+
+/* ===========================
+   Branding
+   =========================== */
+
+.brand-title {
+  display: block;
+  font-weight: 800;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  letter-spacing: 0.2px;
+  color: #b7287e;
+}
+
+.brand-tag {
+  display: block;
+  margin-top: 2px;
+  font-size: 0.7rem;
+  letter-spacing: 0.3px;
+  opacity: 0.9;
+  color: #d36c8d;
+}
+
+
+/* ===========================
+   Nav Toggle (Mobile Button)
+   =========================== */
+
+.nav-toggle {
+  display: none;                       /* hidden on desktop */
+  cursor: pointer;
+  padding: 0.45rem 0.6rem;
+  border-radius: 10px;
+  color: #b7287e;
+  background: rgba(255,255,255,0.4);
+  border: 1px solid rgba(233,200,108,0.35);
+  backdrop-filter: blur(8px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-width: 36px;          /* 👈 guarantees visible width */
+  min-height: 36px;         /* 👈 guarantees visible height */
+  line-height: 1;
+  font-size: 1rem;          /* ensures ☰ is visible if using a font glyph */
+}
+
+.nav-toggle:hover,
+.nav-toggle:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(255,150,200,0.25);
+  outline: 2px solid transparent;
+}
+
+
+/* ===========================
+   Desktop Nav List
+   =========================== */
+
+.nav-list {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  isolation: isolate; /* prevents dropdown overlap issues */
+}
+
+
+/* ===========================
+   Nav Links
+   =========================== */
+
+.nav-link {
+  display: inline-block;
+  padding: 0.55rem 0.9rem;
+  border-radius: 12px;
+
+  color: #b7287e;
+  text-decoration: none;
+
+  transition:
+    background 220ms ease,
+    box-shadow 220ms ease,
+    color 220ms ease;
+}
+
+.nav-link:hover,.nav-link:focus-visible {
+  background: rgba(255,210,230,0.45);
+  color: #d84a8f;
+  outline: 2px solid transparent;
+
+  box-shadow:
+    0 0 0 3px rgba(255,160,200,0.28),
+    0 4px 10px rgba(255,120,180,0.25);
+}
+
+
