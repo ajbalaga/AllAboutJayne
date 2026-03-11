@@ -16,7 +16,7 @@ This project demonstrates how **engineering, storytelling, and visual design** c
 
 # 🌐 Live Demo
 
-Coming soon.
+https://ajbalaga.github.io/AllAboutJayne/
 
 ---
 
