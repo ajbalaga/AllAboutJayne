@@ -121,3 +121,15 @@
 .music-btn:active {
   transform: translateY(0);
 }
+
+@media (max-width: 768px) {
+  .music-line {
+    display: none;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .music-line {
+    display: none;
+  }
+}

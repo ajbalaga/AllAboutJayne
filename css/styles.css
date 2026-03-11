@@ -357,14 +357,8 @@ body::before {
   .z-nav .nav-list.open {
     display: flex !important;         /* ensure it shows when opened */
   }
-
-  /* remove music on mobile (autoplay is often blocked and can be disruptive) */
-  .music-line {
-    display: none;
-  }
   
 }
-
 /* 🧩no animation for mobile */
 @media (prefers-reduced-motion: reduce) {
 
