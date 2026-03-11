@@ -398,6 +398,21 @@ toggle.addEventListener('click', (e) => {
   }
 });
 
+//for ios
+toggle.addEventListener("click", async () => {
+  try {
+    if (audio.paused) {
+      await audio.play();
+      toggle.textContent = "⏸️ Pause Music";
+    } else {
+      audio.pause();
+      toggle.textContent = "▶️ Play Music";
+    }
+  } catch (err) {
+    console.log("Playback failed:", err);
+  }
+});
+
 // Keep UI in sync if user interacts via system media controls (like lock screen)
 audio.addEventListener('play', updateUI);
 audio.addEventListener('pause', updateUI);
