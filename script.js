@@ -373,9 +373,3 @@ toggle.addEventListener("click", async () => {
     console.log("Playback failed:", err);
   }
 });
-
-//remove music on mobile (autoplay is often blocked and can be disruptive)
-const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-if (isMobile) {
-  document.getElementById("music-container")?.remove();
-}
