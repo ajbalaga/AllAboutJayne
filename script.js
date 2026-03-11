@@ -357,62 +357,19 @@ function showFact(idx, { showText = true } = {}) {
 }
 
 //music
-const audio = document.getElementById('bg-music');
-const toggle = document.getElementById('music-toggle');
+const audio = document.getElementById("bg-music");
+const toggle = document.getElementById("music-toggle");
 
-// Update UI based on audio state
-const updateUI = () => {
-  const playing = !audio.paused;
-  toggle.textContent = playing ? '⏸️ Pause' : '▶️ Play';
-  toggle.setAttribute('aria-label', playing ? 'Pause music' : 'Play music');
-  toggle.setAttribute('aria-pressed', playing ? 'true' : 'false');
-};
-
-// Attempt initial play
-const attemptPlay = () => {
-  audio.play().then(updateUI).catch(() => {
-    // If blocked (which is standard on mobile), wait for ANY tap on the screen
-    const unlock = () => {
-      audio.play().then(updateUI).catch(() => {/* ignore */});
-      document.removeEventListener('click', unlock);
-    };
-    
-    // 'click' safely covers both desktop clicks and mobile taps
-    document.addEventListener('click', unlock, { once: true });
-  });
-};
-
-// Run the attempt
-attemptPlay();
-
-// Toggle play/pause via the button
-toggle.addEventListener('click', (e) => {
-  // Stop the event from bubbling up and triggering the document-wide 'unlock' click
-  e.stopPropagation(); 
-  
-  if (audio.paused) {
-    audio.play().then(updateUI);
-  } else {
-    audio.pause();
-    updateUI();
-  }
-});
-
-//for ios
 toggle.addEventListener("click", async () => {
   try {
     if (audio.paused) {
       await audio.play();
-      toggle.textContent = "⏸️ Pause Music";
+      toggle.textContent = "⏸️ Pause";
     } else {
       audio.pause();
-      toggle.textContent = "▶️ Play Music";
+      toggle.textContent = "▶️ Play";
     }
   } catch (err) {
     console.log("Playback failed:", err);
   }
 });
-
-// Keep UI in sync if user interacts via system media controls (like lock screen)
-audio.addEventListener('play', updateUI);
-audio.addEventListener('pause', updateUI);
