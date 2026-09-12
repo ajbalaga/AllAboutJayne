@@ -301,60 +301,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
             // Random emoji for button
             if ($emoji) $emoji.textContent = randomItem(emojis);
-            btn.classList.remove('rippling');
-            void btn.offsetWidth; // reflow to retrigger
-            btn.classList.add('rippling');
+            $btn.classList.remove('rippling');
+            void $btn.offsetWidth; // reflow to retrigger
+            $btn.classList.add('rippling');
         });
     }
 })();
-
-//Fun Fact Image -  Load image- Animate image-Make fun facts switch smoothly-Enable sequential navigation
-function showFact(idx, { showText = true } = {}) {
-    const fact = funFacts[idx];
-    if (!$img || !$media) return;
-
-    // Loading state
-    $media.classList.add("loading");
-
-    $img.classList.remove("show");
-    $img.style.opacity = "0";
-    $img.style.transform = "translateY(25px) scale(.96)";
-    $img.style.filter = "blur(10px) saturate(1.1)";
-
-    const nextSrc = fact?.img || FALLBACK;
-    const nextAlt = fact?.alt || "Fun fact image";
-
-    const loader = new Image();
-
-    loader.onload = () => {
-        $img.src = nextSrc;
-        $img.alt = nextAlt;
-        $cap.textContent = fact?.text || "";
-    };
-
-    loader.onerror = () => {
-        $img.src = FALLBACK;
-        $img.alt = "Pink placeholder";
-        $cap.textContent = fact?.text || "";        
-    };
-
-    loader.src = nextSrc;
-
-    // Caption slide-up animation
-    if (showText && fact?.text) {
-        $box.classList.remove("visible");
-        void $box.offsetWidth;
-        $box.textContent = fact.text;
-
-        requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-                $box.classList.add("visible");
-            });
-        });
-    } else {
-        $box.classList.remove("visible");
-    }
-}
 
 //music
 const audio = document.getElementById("bg-music");

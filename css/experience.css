@@ -1,0 +1,177 @@
+/* ------------------------------
+   Experience Section
+--------------------------------*/
+.experience-intro {
+  max-width: 65ch;
+}
+
+.resume-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1rem 0 0.5rem;
+}
+
+/* Skills */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0 2.5rem;
+}
+
+.skill-group {
+  background: rgba(255, 240, 248, 0.55);
+  border: 1px solid rgba(211, 108, 141, 0.22);
+  border-radius: 16px;
+  padding: 1rem 1.1rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 18px rgba(255, 150, 200, 0.14);
+}
+
+.skill-group h3 {
+  margin: 0 0 0.65rem;
+  font-family: "Playfair Display", serif;
+  font-size: 1.05rem;
+  color: #b7287e;
+}
+
+.skill-tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0;
+}
+
+.skill-tags li {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #c0588e;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(240, 150, 200, 0.3);
+  border-radius: 999px;
+  padding: 0.3rem 0.65rem;
+}
+
+/* Timeline */
+.timeline {
+  list-style: none;
+  margin: 0 0 2.5rem;
+  padding: 0;
+  border-left: 2px solid rgba(212, 175, 55, 0.35);
+}
+
+.timeline-item {
+  position: relative;
+  padding: 0 0 2rem 1.75rem;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 0.35rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--pink-peony), var(--gold));
+  box-shadow: 0 0 0 4px rgba(255, 214, 236, 0.7);
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-role {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-size: 1.25rem;
+  color: #b7287e;
+}
+
+.timeline-role span {
+  color: #7b3f61;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.timeline-date {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #a8477a;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 999px;
+  padding: 0.25rem 0.7rem;
+  white-space: nowrap;
+}
+
+.timeline-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: #5a3b4e;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.timeline-list li {
+  margin-bottom: 0.35rem;
+}
+
+/* Education & Certifications */
+.edu-cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.edu-cert-card {
+  background: rgba(255, 240, 248, 0.55);
+  border: 1px solid rgba(211, 108, 141, 0.22);
+  border-radius: 16px;
+  padding: 1.25rem 1.4rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 18px rgba(255, 150, 200, 0.14);
+}
+
+.edu-cert-card h3 {
+  margin: 0 0 0.75rem;
+  font-family: "Playfair Display", serif;
+  font-size: 1.15rem;
+  color: #b7287e;
+}
+
+.edu-cert-card ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: #5a3b4e;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.edu-cert-card li {
+  margin-bottom: 0.4rem;
+}
+
+.edu-cert-card li strong {
+  color: #c84684;
+}
+
+@media (max-width: 700px) {
+  .timeline-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

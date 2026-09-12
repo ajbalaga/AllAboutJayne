@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alliezza Jayne Balaga • Resume</title>
+  <meta name="description" content="Resume of Alliezza Jayne Balaga, Senior Software Engineer — Full-Stack .NET / Cloud." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pink-peony: #c25a7e;
+      --gold: #c59b2d;
+      --ink: #3a2532;
+      --muted: #6a4a5c;
+      --line: rgba(196, 90, 130, 0.25);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 2.5rem 1.5rem 4rem;
+      background: #fff6fa;
+      color: var(--ink);
+      font-family: "Poppins", system-ui, sans-serif;
+      line-height: 1.6;
+    }
+    .sheet {
+      max-width: 820px;
+      margin: 0 auto;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 2.5rem 3rem;
+      box-shadow: 0 10px 30px rgba(194, 90, 126, 0.12);
+    }
+    h1 {
+      font-family: "Playfair Display", serif;
+      color: var(--pink-peony);
+      margin: 0 0 0.15em;
+      font-size: 2rem;
+    }
+    .title {
+      font-weight: 600;
+      color: var(--muted);
+      margin: 0 0 0.5em;
+      letter-spacing: 0.3px;
+    }
+    .contact-line {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin: 0 0 1.5rem;
+    }
+    .contact-line a { color: var(--pink-peony); text-decoration: none; }
+    h2 {
+      font-family: "Playfair Display", serif;
+      color: var(--pink-peony);
+      font-size: 1.2rem;
+      border-bottom: 2px solid var(--line);
+      padding-bottom: 0.3em;
+      margin: 1.75em 0 0.75em;
+    }
+    h2:first-of-type { margin-top: 0.5em; }
+    p { margin: 0 0 0.75em; font-size: 0.96rem; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+    table td {
+      vertical-align: top;
+      padding: 0.35em 0.5em;
+      border-bottom: 1px solid var(--line);
+    }
+    table td:first-child {
+      font-weight: 600;
+      color: var(--pink-peony);
+      width: 150px;
+      white-space: nowrap;
+    }
+    .job { margin-bottom: 1.25em; }
+    .job-head {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5em;
+      align-items: baseline;
+    }
+    .job-role { font-weight: 700; }
+    .job-role span { font-weight: 500; color: var(--muted); }
+    .job-date { font-size: 0.85rem; color: var(--muted); white-space: nowrap; }
+    ul { margin: 0.4em 0 0; padding-left: 1.2em; font-size: 0.94rem; }
+    li { margin-bottom: 0.3em; }
+    .edu-cert-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .print-bar {
+      max-width: 820px;
+      margin: 0 auto 1rem;
+      text-align: right;
+    }
+    .print-btn {
+      appearance: none;
+      border: 1px solid var(--pink-peony);
+      background: var(--pink-peony);
+      color: #fff;
+      border-radius: 999px;
+      padding: 0.5rem 1.1rem;
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+    @media (max-width: 640px) {
+      .sheet { padding: 1.75rem 1.25rem; }
+      .edu-cert-cols { grid-template-columns: 1fr; }
+      table td:first-child { width: 110px; }
+    }
+    @media print {
+      body { background: #fff; padding: 0; }
+      .print-bar { display: none; }
+      .sheet { border: none; box-shadow: none; padding: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="print-bar">
+    <button class="print-btn" onclick="window.print()">Save as PDF / Print</button>
+  </div>
+  <main class="sheet">
+    <h1>Alliezza Jayne B. Balaga</h1>
+    <p class="title">Senior Software Engineer — Full-Stack .NET / Cloud</p>
+    <p class="contact-line">
+      Pasig City, Philippines &nbsp;|&nbsp; <a href="mailto:ajbbalaga@gmail.com">ajbbalaga@gmail.com</a>
+    </p>
+
+    <h2>Professional Summary</h2>
+    <p>
+      Full-stack software engineer with 10 years of experience designing, building, and deploying scalable
+      applications across fintech, enterprise, and BPO environments. Deep expertise in .NET and Blazor, with
+      hands-on experience in PHP, JavaScript, Angular, and React. Proven track record spanning cloud
+      infrastructure (AWS, Azure), containerized deployments (Docker, Kubernetes), and RPA automation (Blue
+      Prism). Adept at translating business requirements into clean, reliable code and intuitive user
+      interfaces, with a strong record of resolving production issues and modernizing legacy systems.
+    </p>
+
+    <h2>Core Skills</h2>
+    <table>
+      <tr><td>Programming</td><td>C#, PHP, JavaScript, TypeScript, Python, Java, NodeJS, Claude Code, Codex</td></tr>
+      <tr><td>Frameworks</td><td>.NET, Blazor, MudBlazor, Angular, React, Vue</td></tr>
+      <tr><td>Cloud &amp; DevOps</td><td>AWS (EC2, DynamoDB, EKS, CodeCommit), Azure, Docker, Kubernetes</td></tr>
+      <tr><td>Databases</td><td>MySQL, MongoDB, Microsoft SQL Server, AWS DynamoDB</td></tr>
+      <tr><td>Automation</td><td>Blue Prism (RPA), ServiceNow, job scheduling</td></tr>
+      <tr><td>Practices</td><td>Root cause analysis, technical specification writing, application monitoring, risk management</td></tr>
+      <tr><td>Languages</td><td>English, Filipino</td></tr>
+    </table>
+
+    <h2>Professional Experience</h2>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-role">Intelassist <span>| Software Engineer</span></span>
+        <span class="job-date">Sep 2024 – Present</span>
+      </div>
+      <ul>
+        <li>Build and maintain full-stack applications end to end, developing .NET APIs and responsive MudBlazor frontends styled with JavaScript and CSS.</li>
+        <li>Design and implement new frontend interfaces from scratch in MudBlazor, prioritizing usability and consistency across modules.</li>
+        <li>Generate automated PDF and Excel reports using C# .NET, reducing manual document preparation for business users.</li>
+        <li>Deploy and monitor applications on Linux servers and Azure, containerizing services with Docker and orchestrating them on Kubernetes.</li>
+        <li>Validate rate computation accuracy by systematically comparing outputs against the legacy system during migration.</li>
+        <li>Manage data across MySQL and MongoDB, and integrate AI tooling via OpenAPI to extend application functionality.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-role">Electronic Commerce Payments, Inc. <span>| Senior Software Engineer</span></span>
+        <span class="job-date">Feb 2021 – Jul 2024</span>
+      </div>
+      <ul>
+        <li>Researched, designed, and delivered software solutions using C#, .NET, Vue, and TypeScript on AWS (EC2, CodeCommit, DynamoDB, EKS/Kubernetes).</li>
+        <li>Identified and implemented performance enhancements and optimizations across existing codebases.</li>
+        <li>Led root cause analysis on production issues, restoring service reliability and preventing recurrence.</li>
+        <li>Authored technical specifications and implementation plans that guided cross-team development work.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <span class="job-role">IBM Philippines <span>| Software Engineer</span></span>
+        <span class="job-date">Aug 2016 – Dec 2020</span>
+      </div>
+      <ul>
+        <li>Developed web applications in Python, NodeJS, Java, and .NET using AWS, Azure, React, and Angular; contributed to internal hackathons.</li>
+        <li>Maintained production applications and executed data-manipulation scripts using ServiceNow and Microsoft SQL.</li>
+        <li>Automated core business processes with Blue Prism RPA, reducing manual workload for recurring tasks.</li>
+        <li>Built and launched an internal upskilling site (hosted on IBM W3) that helped employees build skills in cloud technologies, DevOps, and microservices.</li>
+      </ul>
+    </div>
+
+    <h2>Education</h2>
+    <div class="edu-cert-cols">
+      <div>
+        <p><strong>Master of Information Systems</strong><br>University of the Philippines Open University, 2022 – Present</p>
+        <p><strong>Bachelor of Science in Computer Engineering</strong><br>Mapua Institute of Technology, 2009 – 2016</p>
+      </div>
+      <div>
+        <h2 style="margin-top:0">Certifications</h2>
+        <ul style="padding-left:1em">
+          <li>Microsoft Certified: Azure Fundamentals</li>
+          <li>Microsoft Certified: Azure AI Fundamentals</li>
+          <li>Microsoft Certified: Azure Data Fundamentals</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
