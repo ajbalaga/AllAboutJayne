@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 //IMAGE LIGHTBOX (click to enlarge)
 (() => {
-    const SELECTOR = '.gallery-grid img, .gal img';
+    const SELECTOR = '.gallery-grid img, .gal img, .project-shot img';
     const imgs = document.querySelectorAll(SELECTOR);
     if (!imgs.length) return;
 
